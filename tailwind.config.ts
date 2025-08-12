@@ -52,16 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				brand: {
+					navy: 'hsl(var(--brand-navy))',
+					'navy-dark': 'hsl(var(--brand-navy-dark))',
+					blue: 'hsl(var(--brand-blue))',
+					'blue-light': 'hsl(var(--brand-blue-light))',
+					green: 'hsl(var(--brand-green))',
+					purple: 'hsl(var(--brand-purple))'
 				}
+			},
+			backgroundImage: {
+				'gradient-navy': 'var(--gradient-navy)',
+				'gradient-blue': 'var(--gradient-blue)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import fantzoLogo from "@/assets/fantzo-logo.png";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -22,8 +23,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link to="/" className="text-2xl font-bold text-foreground">
-                CRICKETS 11
+              <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                <img src={fantzoLogo} alt="FANTZO" className="w-8 h-8" />
+                <span className="text-2xl font-bold gradient-text">
+                  FANTZO
+                </span>
               </Link>
             </div>
 
@@ -65,13 +69,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div className="col-span-1">
-              <div className="text-2xl font-bold text-foreground mb-4">
-                CRICKETS 11
+              <div className="flex items-center space-x-3 mb-4">
+                <img src={fantzoLogo} alt="FANTZO" className="w-8 h-8" />
+                <div className="text-2xl font-bold gradient-text">
+                  FANTZO
+                </div>
               </div>
               <p className="text-muted-foreground text-sm">
-                India's premier fantasy cricket platform for cricket
+                India's premier fantasy gaming platform for fantasy sports
                 enthusiasts. Create your dream team and experience the thrill of
-                live cricket.
+                live gaming.
               </p>
               <div className="flex space-x-4 mt-4">
                 <div className="w-6 h-6 bg-primary rounded"></div>
@@ -141,7 +148,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </li>
                 <li>
                   <span className="text-muted-foreground text-sm">
-                    support@crickets11.com
+                    support@fantzo.com
                   </span>
                 </li>
               </ul>
@@ -150,7 +157,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           <div className="mt-8 border-t border-border pt-8">
             <p className="text-center text-sm text-muted-foreground">
-              © 2025 Crickets11. All rights reserved.
+              © 2025 FANTZO. All rights reserved.
             </p>
           </div>
         </div>

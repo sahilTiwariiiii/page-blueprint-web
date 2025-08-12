@@ -3,8 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Star, Trophy, Users, Shield, TrendingUp, Zap, BarChart3, DollarSign } from "lucide-react";
 import mobileAppImage from "@/assets/mobile-app.png";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useEffect } from "react";
 
 const Home = () => {
+  useScrollAnimation();
+
+  useEffect(() => {
+    // Add animation delays to sections
+    const sections = document.querySelectorAll('.scroll-reveal');
+    sections.forEach((section, index) => {
+      (section as HTMLElement).style.animationDelay = `${index * 0.1}s`;
+    });
+  }, []);
   const features = [
     {
       icon: Trophy,
@@ -67,47 +78,47 @@ const Home = () => {
       <section className="relative overflow-hidden bg-gradient-navy py-20 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left animate-hero-slide-up">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Experience Fantasy Cricket Like Never Before
+                Experience Fantasy <span className="gradient-text">Gaming</span> Like Never Before
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
                 Create your dream team, compete with friends, and win big with
-                Cricket11 - India's most exciting fantasy cricket platform.
+                <span className="gradient-text font-semibold"> FANTZO </span> - India's most exciting fantasy gaming platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="bg-brand-green hover:bg-brand-green/90 text-white">
+                <Button size="lg" className="bg-brand-green hover:bg-brand-green/90 text-white hover-glow animate-bounce-in">
                   📱 Download Android App
                 </Button>
-                <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
+                <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 hover-glow animate-bounce-in">
                   Play on Web <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end animate-hero-slide-right">
               <div className="relative">
                 <img
                   src={mobileAppImage}
-                  alt="Cricket11 Mobile App"
-                  className="w-80 h-auto max-w-full rounded-3xl shadow-2xl"
+                  alt="FANTZO Mobile App"
+                  className="w-80 h-auto max-w-full rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-blue rounded-full opacity-20 blur-xl"></div>
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-brand-purple/20 rounded-full opacity-20 blur-xl"></div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-fantzo rounded-full opacity-30 blur-xl animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-brand-purple/20 rounded-full opacity-20 blur-xl animate-pulse"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Cricket11 Section */}
+      {/* Why Choose FANTZO Section */}
       <section className="py-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose Cricket11
+              Why Choose <span className="gradient-text">FANTZO</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experience the ultimate fantasy cricket platform with features designed to enhance your
+              Experience the ultimate fantasy gaming platform with features designed to enhance your
               gameplay and winning chances.
             </p>
           </div>
@@ -115,10 +126,10 @@ const Home = () => {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="border-border bg-card hover:bg-card/80 transition-colors">
+                <Card key={index} className="border-border bg-card hover:bg-card/80 transition-all duration-500 hover-glow scroll-reveal">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 bg-gradient-fantzo rounded-lg flex items-center justify-center mb-4 animate-bounce-in">
+                      <Icon className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-card-foreground mb-2">
                       {feature.title}
@@ -134,22 +145,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How Cricket11 Works */}
+      {/* How FANTZO Works */}
       <section className="py-20 bg-brand-navy">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              How Cricket11 Works
+              How <span className="gradient-text">FANTZO</span> Works
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get started with fantasy cricket in four simple steps
+              Get started with fantasy gaming in four simple steps
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-primary-foreground">
+              <div key={index} className="text-center scroll-reveal">
+                <div className="w-16 h-16 bg-gradient-fantzo rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl font-bold text-white">
                     {step.number}
                   </span>
                 </div>
@@ -173,12 +184,12 @@ const Home = () => {
               What Our Players Say
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of happy users who have already experienced the thrill of fantasy cricket on
-              Cricket11
+              Join thousands of happy users who have already experienced the thrill of fantasy gaming on
+              <span className="gradient-text font-semibold"> FANTZO</span>
             </p>
           </div>
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-border bg-card">
+          <div className="max-w-4xl mx-auto scroll-reveal">
+            <Card className="border-border bg-card hover-glow">
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
                   {[...Array(4)].map((_, i) => (
@@ -188,7 +199,7 @@ const Home = () => {
                   <span className="ml-2 text-sm text-muted-foreground">Won ₹50,000</span>
                 </div>
                 <blockquote className="text-lg text-card-foreground mb-6">
-                  "What I appreciate most about Cricket11 is the transparency. The points system is fair and there's
+                  "What I appreciate most about FANTZO is the transparency. The points system is fair and there's
                   always a detailed analysis. Highly recommended!"
                 </blockquote>
                 <div className="flex items-center">
@@ -207,20 +218,20 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-blue">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Start Your Fantasy Cricket Journey?
+      <section className="py-20 bg-gradient-fantzo">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-scale-in">
+            Ready to Start Your Fantasy Gaming Journey?
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Join millions of cricket fans and experience the thrill of creating your dream
-            team and winning big rewards.
+            Join millions of gaming fans and experience the thrill of creating your dream
+            team and winning big rewards with FANTZO.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-brand-green hover:bg-brand-green/90 text-white">
+            <Button size="lg" className="bg-white text-brand-purple hover:bg-white/90 hover-glow font-semibold">
               📱 Download Android App
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 hover-glow">
               🌐 Play on Web
             </Button>
           </div>

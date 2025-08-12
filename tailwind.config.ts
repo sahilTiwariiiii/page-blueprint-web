@@ -58,12 +58,15 @@ export default {
 					blue: 'hsl(var(--brand-blue))',
 					'blue-light': 'hsl(var(--brand-blue-light))',
 					green: 'hsl(var(--brand-green))',
-					purple: 'hsl(var(--brand-purple))'
+					purple: 'hsl(var(--brand-purple))',
+					orange: 'hsl(var(--brand-orange))',
+					pink: 'hsl(var(--brand-pink))'
 				}
 			},
 			backgroundImage: {
 				'gradient-navy': 'var(--gradient-navy)',
-				'gradient-blue': 'var(--gradient-blue)'
+				'gradient-blue': 'var(--gradient-blue)',
+				'gradient-fantzo': 'var(--gradient-fantzo)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
